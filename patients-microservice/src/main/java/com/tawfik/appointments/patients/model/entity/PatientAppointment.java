@@ -1,4 +1,4 @@
-package com.tawfik.appointments.patients.entity;
+package com.tawfik.appointments.patients.model.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ public class PatientAppointment {
 	
 	@ManyToOne
 	@JoinColumn(name="patientId")
-	private Patient patientId;
+	private Patient patient;
 	
 	private long appointmentId;
 
@@ -28,12 +28,12 @@ public class PatientAppointment {
 		this.id = id;
 	}
 
-	public Patient getPatientId() {
-		return patientId;
+	public Patient getPatient() {
+		return patient;
 	}
 
-	public void setPatientId(Patient patientId) {
-		this.patientId = patientId;
+	public void setPatient(Patient patientId) {
+		this.patient = patientId;
 	}
 
 	public long getAppointmentId() {

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tawfik.appointments.doctors.entity.Doctor;
+import com.tawfik.appointments.doctors.model.entity.Doctor;
 import com.tawfik.appointments.doctors.repository.DoctorRepository;
 
 @Service
@@ -18,5 +18,8 @@ public class DoctorService {
 	public List<Doctor> listAll(){
 		return (List<Doctor>) this.doctorRepository.findAll();
 	}
-
+	
+	public Doctor saveDoctor(Doctor doctor) {
+		return doctorRepository.save(doctor);
+	}
 }

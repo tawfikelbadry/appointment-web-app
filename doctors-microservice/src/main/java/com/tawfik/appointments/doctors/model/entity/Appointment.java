@@ -1,4 +1,4 @@
-package com.tawfik.appointments.doctors.entity;
+package com.tawfik.appointments.doctors.model.entity;
 
 import java.util.Date;
 

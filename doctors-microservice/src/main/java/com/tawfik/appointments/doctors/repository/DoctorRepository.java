@@ -3,7 +3,7 @@ package com.tawfik.appointments.doctors.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.tawfik.appointments.doctors.entity.Doctor;
+import com.tawfik.appointments.doctors.model.entity.Doctor;
 
 @Repository
 public interface DoctorRepository extends CrudRepository<Doctor, Long>{

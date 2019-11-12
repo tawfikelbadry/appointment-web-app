@@ -1,4 +1,4 @@
-package com.tawfik.appointments.patients.entity;
+package com.tawfik.appointments.patients.model.entity;
 
 import java.util.List;
 
@@ -23,9 +23,11 @@ public class Patient {
 	private String gender;
 	private String phone;
 	private int age;
-	
+
+	private long userId;
+
 	@JsonIgnore
-	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="patientId")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "patient")
 	private List<PatientAppointment> appointmentList;
 
 	public long getId() {
@@ -76,6 +78,12 @@ public class Patient {
 		this.appointmentList = appointmentList;
 	}
 
+	public long getUserId() {
+		return userId;
+	}
 
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
 
 }
