@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tawfik.appointment.gateway.model.entity.User;
 import com.tawfik.appointment.gateway.model.vm.DoctorRegisterVm;
+import com.tawfik.appointment.gateway.model.vm.LoginVm;
 import com.tawfik.appointment.gateway.model.vm.PatientRegisterVm;
 import com.tawfik.appointment.gateway.repository.UserRepository;
 
@@ -40,6 +41,10 @@ public class UserService {
 			return user;
 		}
 		return null;
+	}
+
+	public User isAuthenticated(LoginVm loginVm) {
+		return userRepository.findByUsernameAndPassword(loginVm.getUsername(),loginVm.getPassword()).orElse(null);
 	}
 
 }

@@ -13,8 +13,10 @@ import org.springframework.web.client.RestTemplate;
 import com.tawfik.appointment.gateway.constants.Constants;
 import com.tawfik.appointment.gateway.model.entity.User;
 import com.tawfik.appointment.gateway.model.response.BaseResponse;
+import com.tawfik.appointment.gateway.model.response.LoginResponse;
 import com.tawfik.appointment.gateway.model.vm.DoctorRegisterVm;
 import com.tawfik.appointment.gateway.model.vm.DoctorVm;
+import com.tawfik.appointment.gateway.model.vm.LoginVm;
 import com.tawfik.appointment.gateway.model.vm.PatientRegisterVm;
 import com.tawfik.appointment.gateway.model.vm.PatientVm;
 import com.tawfik.appointment.gateway.service.UserService;
@@ -66,6 +68,25 @@ public class UserrController {
 			return new BaseResponse("Patient registerd successfully", true);
 		}
 		return new BaseResponse("some error happend, Please try later", false);
+	}
+
+	// TODO need to handle the security authentication and authorization
+	// this service just return if the user is registerd or not only and not handle
+	// any security real concerns
+	@PostMapping("/is-authenticate")
+	public BaseResponse isAuthenticatedUser(@RequestBody LoginVm loginVm) {
+		User loggedUser = userService.isAuthenticated(loginVm);
+		LoginResponse loginResponse = new LoginResponse();
+		if (loggedUser != null) {
+			loginResponse.setMessage("user is authenticated");
+			loginResponse.setSuccess(true);
+			loginResponse.setType(loggedUser.getType());
+		} else {
+			loginResponse.setMessage("username or password is invalid");
+			loginResponse.setSuccess(false);
+			loginResponse.setType(Constants.NOT_AVAILABLE);
+		}
+		return loginResponse;
 	}
 
 }
