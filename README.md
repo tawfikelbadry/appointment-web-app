@@ -33,7 +33,7 @@ simple Appointment web application between doctors and patients.
     * localhost:8001/api/patient-appointements/{patientId}/appointment/{appointementId}        //reserve appointment to             patient (POST)
     * localhost:8001/api/patients/save                  // save patient (POST)          
 
-# TODO 
+# TODO  ( I will complete the documentation tommorow )
     * complete the documentation ( the database design , the code architchre , the system design)   (tommorow)
     * adding the services as docker images and the docs for how to run it from docker               (week end)
     * add the security on the gateway service that controls all security for the system             (week end)
