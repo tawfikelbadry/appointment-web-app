@@ -43,10 +43,10 @@ public class UserrController {
 		BaseResponse response = new RestTemplate()
 				.postForEntity(Constants.DOCTORS_SAVE_DOCTOR_URL, doctorVm, BaseResponse.class).getBody();
 
-		if(response.isSuccess()) {
+		if (response.isSuccess()) {
 			return new BaseResponse("Doctor registerd successfully", true);
 		}
-		return new BaseResponse("some error happend, Please try later",false);
+		return new BaseResponse("some error happend, Please try later", false);
 	}
 
 	@PostMapping("/register-patient")
@@ -62,10 +62,10 @@ public class UserrController {
 		BaseResponse response = new RestTemplate()
 				.postForEntity(Constants.PATIENTS_SAVE_PATIENT_URL, patientVm, BaseResponse.class).getBody();
 
-		if(response.isSuccess()) {
+		if (response.isSuccess()) {
 			return new BaseResponse("Patient registerd successfully", true);
 		}
-		return new BaseResponse("some error happend, Please try later",false);
+		return new BaseResponse("some error happend, Please try later", false);
 	}
 
 }
