@@ -33,9 +33,10 @@ simple Appointment web application between doctors and patients.
     * localhost:8001/api/patient-appointements/{patientId}/appointment/{appointementId}        //reserve appointment to             patient (POST)
     * localhost:8001/api/patients/save                  // save patient (POST)          
 
-# TODO  ( I will complete the documentation tommorow )
-    * complete the documentation ( the database design , the code architchre , the system design)   (tommorow)
-    * adding the services as docker images and the docs for how to run it from docker               (week end)
-    * add the security on the gateway service that controls all security for the system             (week end)
-    * add some message queue for handling the work between services                                 (week end)
-    * add the validation for all the api's                                                          (week end)
+# TODO  
+    * complete the documentation ( the database design , the code architchre , the system design)   
+    * adding the services as docker images and the docs for how to run it from docker               
+    * add the security on the gateway service that controls all security for the system            
+    * add some message queue for handling the work between services                                
+    * add the validation for all the api's                                                         
+    * add eureka server to handle multiple instances and the diffrent services
